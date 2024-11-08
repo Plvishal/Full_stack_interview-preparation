@@ -1,9 +1,11 @@
 import './App.css';
+import { useCounterContext } from './context/Counter';
 
 function App() {
+  const { count } = useCounterContext();
   return (
     <>
-      <h1>Hello</h1>
+      <h1>Hello : {count}</h1>
     </>
   );
 }

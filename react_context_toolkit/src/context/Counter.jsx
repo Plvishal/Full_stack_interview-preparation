@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 // 1. create context
 const CounterContext = createContext();
@@ -9,5 +9,10 @@ export const useCounterContext = () => useContext(CounterContext);
 
 // 2. Provide context
 export const CounterProvider = ({ children }) => {
-  return <CounterContext.Provider>{children}</CounterContext.Provider>;
+  const [count, setCount] = useState(0);
+  return (
+    <CounterContext.Provider value={{ count, setCount }}>
+      {children}
+    </CounterContext.Provider>
+  );
 };
