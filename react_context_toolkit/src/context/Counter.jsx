@@ -1,5 +1,11 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
-const CounterContext=createContext();
+// 1. create context
+const CounterContext = createContext();
 
+// 
 
+// 2. Provide context
+export const CounterProvider = ({ children }) => {
+  return <CounterContext.Provider>{children}</CounterContext.Provider>;
+};
